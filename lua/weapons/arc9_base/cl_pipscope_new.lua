@@ -330,7 +330,8 @@ local fxaa_mat = Material("effects/arc9/pp_fxaa")
 function SWEP:RenderRTExpensive(atttbl, magnification)
     local viewstup = render.GetViewSetup()
     rt_viewsetup_fov, rt_viewsetup_fov_unscaled = viewstup.fov, viewstup.fov_unscaled
-    local rtfov = rt_viewsetup_fov_unscaled / magnification
+    -- local rtfov = rt_viewsetup_fov_unscaled / magnification
+    local rtfov = self:ScaleFOVByWidthRatio(rt_viewsetup_fov, 0.75) / magnification
     local rtvm = !atttbl.RTScopeNew_DisableRTVM and arc9_fx_rtvm:GetBool()
     
     ARC9.RTScopeRenderFOV = rtfov
@@ -545,6 +546,8 @@ function SWEP:DrawRTReticle(model, atttbl, nonatt, cheap)
             local globalscalie = 4 * (atttbl.RTScopeReticleScale or 1)
 
             globalscalie = globalscalie * (atttbl.ScopeScreenRatio or 0.5)
+
+            globalscalie = globalscalie - (scrw/scrh - 16/9) -- woops
             
             local reticle = sight.Reticle or atttbl.RTScopeReticle
             local color = atttbl.RTScopeColor or color_white
