@@ -22,7 +22,7 @@ ARC9.IncompatibleAddons = {
     -- VTools
     ["DisplayDistancePlane"] = "Scenebuilding related tool (most likely) installed through GarrysMod/garrysmod/addons/ folder breaks ARC9. Check that folder and delete the addon.",
     -- TFA's Tactical Lean
-    ["TacticalLean"] = "Mod is old, laggy and interferes with ARC9 lean. Use relaxtakesnotes's \"Leaning\" mod steamcommunity.com/sharedfiles/filedetails/?id=3138563659",
+    ["TacticalLean"] = "Mod is old and laggy. Use relaxtakesnotes's \"Leaning\" mod steamcommunity.com/sharedfiles/filedetails/?id=3138563659",
     -- fixed maybe     SLVBase 2  -- ["1516699044"] = "Causes black screen", -- Minecraft drops
     ["2879200766"] = "Teleports viewmodel to any dropped gun",
     -- Advanced color tool
@@ -51,6 +51,8 @@ ARC9.IncompatibleAddons = {
     ["2757203958"] = "Causes errors each time sound is played. Can be fixed but it's an ancient addon with tons of reuploads. (getZINVProfiles() \"_ =\" is the culprit); Use NPC Daemon instead.",
     -- zinv +
     ["597017711"] = "Causes errors each time sound is played. Can be fixed but it's an ancient addon with tons of reuploads. (getZINVProfiles() \"_ =\" is the culprit); Use NPC Daemon instead.",
+    -- [ArcCW] Warhammer 40k - Content
+    ["3265879428"] = "Breaks scopes picture",
 }
 
 local ScreenScaleMulti = ARC9.ScreenScale
