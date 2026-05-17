@@ -260,8 +260,8 @@ function SWEP:RenderRT(cheap, magnification)
             if fpslock_nextdraw < CurTime() then
                 fpslock_nextdraw = CurTime() + 1 / fpslock
                 render.PushRenderTarget( fpslock_texture )
-                    -- render.SetMaterial( cheap and mat_rt_cheap or mat_rt_expensive )
-                    render.SetMaterial( pixely and mat_pixel_lense or mat_shader_lense )
+                    render.SetMaterial( cheap and mat_rt_cheap or mat_rt_expensive )
+                    -- render.SetMaterial( pixely and mat_pixel_lense or mat_shader_lense )
                     render.DrawScreenQuad()
                 render.PopRenderTarget()
             end
