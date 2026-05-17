@@ -906,7 +906,7 @@ local function SetTPIKOffset(self, wm, owner, lp)
         elseif ht == "ar2" or ht == "smg" then
             crouchdelta = crouchdelta * -1
         end
-        if prone and owner:IsProne() then crouchdelta = 1 end
+        if owner.IsProne and owner:IsProne() then crouchdelta = 1 end
         if HasCustomOffset("crouch") then pos:Add(GetCustomOffset("crouch") * crouchdelta) end
     end
 
