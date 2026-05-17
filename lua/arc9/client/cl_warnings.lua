@@ -52,7 +52,9 @@ ARC9.IncompatibleAddons = {
     -- zinv +
     ["597017711"] = "Causes errors each time sound is played. Can be fixed but it's an ancient addon with tons of reuploads. (getZINVProfiles() \"_ =\" is the culprit); Use NPC Daemon instead.",
     -- [ArcCW] Warhammer 40k - Content
-    ["3265879428"] = "Breaks scopes picture",
+    ["3265879428"] = "Breaks scopes picture",    
+    -- Realistic VHS Effect2
+    ["3494727681"] = "Breaks scopes picture",
 }
 
 local ScreenScaleMulti = ARC9.ScreenScale
