@@ -208,8 +208,19 @@ local invertcolormodif = {
 
 local tune_nohdr = Vector(1, 0, 0 )
 
-local fpslock_mat = Material( "pp/motionblur" )
-local fpslock_texture = render.GetMoBlurTex0()
+local fpslock_texture = GetRenderTargetEx("arc9_optic_motionblur2",  scrw, scrh, 
+    RT_SIZE_FULL_FRAME_BUFFER, 
+    MATERIAL_RT_DEPTH_NONE, 
+    bit.bor(4,8,256,512), 
+    0, 
+    IMAGE_FORMAT_RGB888
+)
+local fpslock_mat = CreateMaterial( "arc9_mat_optic_motionblur2", "UnlitGeneric", {
+    ["$basetexture"] = fpslock_texture:GetName(),
+    ["$translucent"] = 0,
+    ["$vertexcolor"] = 1
+} )
+
 local fpslock_nextdraw = 0
 
 function SWEP:RenderRT(cheap, magnification)
@@ -244,7 +255,6 @@ function SWEP:RenderRT(cheap, magnification)
 
         if fpslock then
             render.UpdateScreenEffectTexture()
-            fpslock_mat:SetFloat( "$alpha", 1 )
             fpslock_mat:SetTexture( "$basetexture", fpslock_texture )
             
             if fpslock_nextdraw < CurTime() then
