@@ -8,5 +8,7 @@
 	$bluramount 0
 	$alphatest 1
 	$normalmap  "vgui/black"
+	$forcerefract 1
+ 
 	// $localrefract 1
 }

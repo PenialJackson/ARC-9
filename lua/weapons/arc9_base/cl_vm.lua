@@ -344,7 +344,7 @@ local function shadersetstaticvalues()
     mat_dof_debug:SetFloat("$c0_y", 0.07)
 end
 
-timer.Simple(10, shadersetstaticvalues)
+timer.Simple(5, shadersetstaticvalues)
 
 local mat_dof_mask_debug = CreateMaterial("mat_debug_arc9_dof_mask5", "UnlitGeneric", {
     ["$basetexture"] = rt_dofmask:GetName(),
@@ -359,6 +359,7 @@ function SWEP:DoFSetParams(strength)
 
     if !self.DoFDepthSet then 
         mat_dof:SetFloat("$c0_y", self.DoFDepth or 0.07)
+        shadersetstaticvalues()
         self.DoFDepthSet = true
     end
 end
