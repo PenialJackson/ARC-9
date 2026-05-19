@@ -31,7 +31,7 @@ function SWEP:CalcView(ply, pos, ang, fov)
         if !self:IsUsingRTScope() then
             local recam = math.min(swepDt.RecoilAmount, 15)
             SmoothRecoilAmount = Lerp(FrameTime() * 3, SmoothRecoilAmount, recam)
-            local thing = SmoothRecoilAmount * (reckick * self:GetProcessedValue("RecoilKickPitchMult")) * self:GetProcessedValue("Recoil")
+            local thing = SmoothRecoilAmount * (reckick * self:GetProcessedValue("RecoilKickPitchMult", true)) * self:GetProcessedValue("Recoil")
             ang.p = ang.p - 0.6 * thing
             self.VMZOffsetForCamera = -0.25 * thing
         end
